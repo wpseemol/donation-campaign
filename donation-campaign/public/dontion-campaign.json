@@ -1,0 +1,137 @@
+[
+  {
+    "id": "5",
+    "category": "Education",
+    "title": "STEM Education Initiative",
+    "description": "Support our STEM education program and inspire the next generation of scientists and engineers. Your impact is limitless.",
+    "image_url": "https://i.ibb.co/sbkMMvR/STEM-Education-Initiative.jpg",
+    "price": 12.99,
+    "text_color": "#FF444A",
+    "background_color": "rgba(255, 68, 74, 0.15)",
+    "category_background_color": "rgba(255, 68, 74, 0.20)"
+  },
+  {
+    "id": "11",
+    "category": "Food",
+    "title": "Nutrition for Children",
+    "description": "Support our nutrition program for children in impoverished areas. Your contribution can ensure they grow up healthy and strong.",
+    "image_url": "https://i.ibb.co/hMwJf6d/Nutrition-for-Children.jpg",
+    "price": 14.99,
+    "text_color": "#F87147",
+    "background_color": "rgba(248, 113, 71, 0.15)",
+    "category_background_color": "rgba(248, 113, 71, 0.20)"
+  },
+
+  {
+    "id": "2",
+    "category": "Health",
+    "title": "Medical Supplies Drive",
+    "description": "Help us gather essential medical supplies for hospitals in need. Your contributions can save lives.",
+    "image_url": "https://i.ibb.co/3kF0cnL/Medical-Supplies-Drive.jpg",
+    "price": 10.49,
+    "text_color": "#0052FF",
+    "background_color": "rgba(0, 82, 255, 0.15)",
+    "category_background_color": "rgba(0, 82, 255, 0.20)"
+  },
+  {
+    "id": "3",
+    "category": "Health",
+    "title": "Mental Health Awareness",
+    "description": "Join us in raising awareness for mental health. Your support can help break the stigma and provide assistance to those in need.",
+    "image_url": "https://i.ibb.co/7W4Q9mm/Mental-Health-Awareness.jpg",
+    "price": 15.75,
+    "text_color": "#0052FF",
+    "background_color": "rgba(0, 82, 255, 0.15)",
+    "category_background_color": "rgba(0, 82, 255, 0.20)"
+  },
+
+  {
+    "id": "6",
+    "category": "Education",
+    "title": "Books for Schools",
+    "description": "Donate books to schools in underserved communities. Your generosity can open doors to a world of knowledge.",
+    "image_url": "https://i.ibb.co/9y6CpVZ/Books-for-Schools.jpg",
+    "price": 8.25,
+    "text_color": "#FF444A",
+    "background_color": "rgba(255, 68, 74, 0.15)",
+    "category_background_color": "rgba(255, 68, 74, 0.20)"
+  },
+  {
+    "id": "7",
+    "category": "Clothing",
+    "title": "Warm Clothing Drive",
+    "description": "Provide warm clothing to those in need during the cold winter months. Your kindness can bring comfort and hope.",
+    "image_url": "https://i.ibb.co/D4JRYYq/Warm-Clothing-Drive.jpg",
+    "price": 19.99,
+    "text_color": "#79C23F",
+    "background_color": "rgba(121, 194, 63, 0.15)",
+    "category_background_color": "rgba(121, 194, 63, 0.20)"
+  },
+  {
+    "id": "4",
+    "category": "Education",
+    "title": "Scholarship Fund",
+    "description": "Contribute to our scholarship fund to help deserving students pursue higher education. Your donation can change lives.",
+    "image_url": "https://i.ibb.co/YRTG6YD/Scholarship-Fund.jpg",
+    "price": 50.99,
+    "text_color": "#FF444A",
+    "background_color": "rgba(255, 68, 74, 0.15)",
+    "category_background_color": "rgba(255, 68, 74, 0.20)"
+  },
+  {
+    "id": "8",
+    "category": "Clothing",
+    "title": "Children's Clothing Drive",
+    "description": "Support our initiative to collect clothing for underprivileged children. Your donation can make a child smile.",
+    "image_url": "https://i.ibb.co/RTbXRpN/Children-s-Clothing-Drive.jpg",
+    "price": 7.99,
+    "text_color": "#79C23F",
+    "background_color": "rgba(121, 194, 63, 0.15)",
+    "category_background_color": "rgba(121, 194, 63, 0.20)"
+  },
+  {
+    "id": "10",
+    "category": "Food",
+    "title": "Feed the Hungry",
+    "description": "Join us in feeding the hungry and eradicating food insecurity. Your donations can provide meals to those in need.",
+    "image_url": "https://i.ibb.co/Y06hCBW/Feed-the-Hungry.webp",
+    "price": 5.49,
+    "text_color": "#F87147",
+    "background_color": "rgba(248, 113, 71, 0.15)",
+    "category_background_color": "rgba(248, 113, 71, 0.20)"
+  },
+  {
+    "id": "9",
+    "category": "Clothing",
+    "title": "Dress for Success",
+    "description": "Help individuals in need by providing them with professional attire. Your support can change lives and empower careers.",
+    "image_url": "https://i.ibb.co/1RzT6VM/Dress-for-Success.jpg",
+    "price": 29.99,
+    "text_color": "#79C23F",
+    "background_color": "rgba(121, 194, 63, 0.15)",
+    "category_background_color": "rgba(121, 194, 63, 0.20)"
+  },
+
+  {
+    "id": "12",
+    "category": "Food",
+    "title": "Community Kitchen",
+    "description": "Help us run a community kitchen to provide warm meals to the less fortunate. Your kindness can fill hungry stomachs.",
+    "image_url": "https://i.ibb.co/7NjMBc3/Community-Kitchen.webp",
+    "price": 8.75,
+    "text_color": "#F87147",
+    "background_color": "rgba(248, 113, 71, 0.15)",
+    "category_background_color": "rgba(248, 113, 71, 0.20)"
+  },
+  {
+    "id": "1",
+    "category": "Health",
+    "title": "Healthcare for All",
+    "description": "Support our mission to provide essential healthcare services to underserved communities. Your donation can make a significant difference in someone's life.",
+    "image_url": "https://i.ibb.co/7nytqdJ/Healthcare-for-All.jpg",
+    "price": 25.99,
+    "text_color": "#0052FF",
+    "background_color": "rgba(0, 82, 255, 0.15)",
+    "category_background_color": "rgba(0, 82, 255, 0.20)"
+  }
+]

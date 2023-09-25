@@ -2,7 +2,8 @@
 
 const Footer = () => {
     return (
-      <footer>
+      <footer className="my-20">
+        
       </footer>
     );
 };

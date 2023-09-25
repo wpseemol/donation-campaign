@@ -4,6 +4,6 @@
 
 @layer components {
   .active {
-    @apply text-primaryColr underline;
+    @apply text-primaryColr underline font-bold duration-200;
   }
 }

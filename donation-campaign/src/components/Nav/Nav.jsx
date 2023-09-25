@@ -1,18 +1,25 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Nav = () => {
   return (
     <nav
       className="container 2xl:container xl:container lg:container md:container sm:container  mx-auto
-    flex justify-between items-center
+    sm:flex justify-between items-center text-textColor
     "
     >
-      <section className="my-14">
-        <img src="./Images/Logo.png" alt="" />
+      <section className="my-14 flex justify-center sm:inline">
+        <Link to={"/"}>
+          <img src="./Images/Logo.png" alt="" />
+        </Link>
       </section>
+
       <section>
-        <ul className="flex items-center gap-14">
-          <li >
+        <ul
+          className="
+        text-center bg-slate-50 m-8 p-5 sm:m-0 sm:p-0 rounded-xl sm:bg-inherit sm:text-left  sm:bg-none
+        sm:flex items-center gap-14 font-normal text-xl"
+        >
+          <li className="">
             <NavLink
               to={"/"}
               className={({ isActive, isPending }) =>
@@ -22,7 +29,7 @@ const Nav = () => {
               Home
             </NavLink>
           </li>
-          <li>
+          <li className="my-2">
             <NavLink
               to={"./donation"}
               className={({ isActive, isPending }) =>
@@ -32,7 +39,7 @@ const Nav = () => {
               Donation
             </NavLink>{" "}
           </li>
-          <li>
+          <li className="">
             <NavLink
               to={"./statistics"}
               className={({ isActive, isPending }) =>

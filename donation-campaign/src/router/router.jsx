@@ -1,8 +1,8 @@
-
-import { createBrowserRouter } from 'react-router-dom';
-import Layout from '../Layout/Layout';
-import Donation from '../pages/Donation/Donation';
-import Statistics from '../pages/Statistics/Statistics';
+import { createBrowserRouter } from "react-router-dom";
+import Layout from "../Layout/Layout";
+import Donation from "../pages/Donation/Donation";
+import Statistics from "../pages/Statistics/Statistics";
+import SingelPage from "../pages/SingelPage/SingelPage";
 
 const router = createBrowserRouter([
   {
@@ -15,7 +15,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/statistics",
-        element: <Statistics />
+        element: <Statistics />,
+      },
+      {
+        path: "/:item",
+        element: <SingelPage />,
       },
     ],
   },
