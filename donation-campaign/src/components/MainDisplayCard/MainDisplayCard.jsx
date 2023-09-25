@@ -10,7 +10,7 @@ const MainDisplayCard = ({ data }) => {
     category_background_color,
     background_color,
     text_color,
-  } = data;
+  } = data || {};
 
   const navigate = useNavigate();
 
