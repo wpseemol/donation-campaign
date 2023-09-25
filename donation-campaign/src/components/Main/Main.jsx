@@ -1,15 +1,12 @@
-import {  useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Outlet, useLocation, useNavigation } from "react-router-dom";
 import axios from "axios";
 import MainDisplayCard from "../MainDisplayCard/MainDisplayCard";
 
-
 const Main = () => {
-   const nevection = useNavigation();
-   const isLoadingProducts = nevection.state === "loading";
-   const { pathname } = useLocation();
-   
-
+  const nevection = useNavigation();
+  const isLoadingProducts = nevection.state === "loading";
+  const { pathname } = useLocation();
 
   const [donationData, getDonationData] = useState([]);
   useEffect(() => {
@@ -24,8 +21,6 @@ const Main = () => {
     getData();
   }, []);
 
-
-
   return (
     <main className="container 2xl:container xl:container lg:container md:container sm:container  mx-auto">
       {isLoadingProducts && (
@@ -34,9 +29,9 @@ const Main = () => {
         </div>
       )}
       {pathname === "/" ? (
-        <section className="grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 mt-20 mx-2">
+        <section className="grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-6 mt-20 mx-2">
           {donationData.map((data) => (
-            <MainDisplayCard data={data} key={data.id}  />
+            <MainDisplayCard data={data} key={data.id} />
           ))}
         </section>
       ) : (
