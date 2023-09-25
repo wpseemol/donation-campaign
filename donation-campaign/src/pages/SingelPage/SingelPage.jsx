@@ -51,9 +51,7 @@ const SingelPage = () => {
     category,
     title,
     image_url,
-
     description,
-
     text_color,
     price,
   } = clickedData || {};
@@ -63,19 +61,19 @@ const SingelPage = () => {
   };
 
   return (
-    <section>
-      <div className="relative">
+    <section className="m-4 md:m-0">
+      <div className="sm:relative rounded-lg">
         <img
-          className="w-full max-h-singlePageImageHeight object-cover object-center"
+          className="w-full rounded-lg  sm:max-h-singlePageImageHeight object-cover object-center"
           src={image_url}
           alt={title + " frome " + category + "Category"}
         />
-        <div className="absolute bottom-0 left-0 bg-singlePageBgClr w-full">
+        <div className="sm:absolute rounded-b-lg bottom-0 left-0 bg-singlePageBgClr w-full">
           <button
             onClick={() => {
               hendalarDontionClickFor(id);
             }}
-            className="m-9 text-xl text-white font-semibold px-6 py-4 rounded-md"
+            className="btn md:btn-lg sm:m-9 m-3 text-xl text-white font-semibold  rounded-md"
             style={priceBtnStyle}
           >
             <p>Donate ${Math.round(price)}</p>
