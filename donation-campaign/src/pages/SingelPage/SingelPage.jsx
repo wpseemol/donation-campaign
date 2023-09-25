@@ -1,8 +1,35 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+function hendalarDontionClickFor(clickedId) {
+  function getLsData() {
+    const lsData = localStorage.getItem("donationCart");
+    if (lsData) {
+      return JSON.parse(lsData);
+    }
+    return [];
+  }
+
+  function setLsData(id) {
+    const storGetData = getLsData();
+    const isHasData = storGetData.find((item) => item === id);
+    if (!isHasData) {
+      storGetData.push(id);
+      const jsonData = JSON.stringify(storGetData);
+      localStorage.setItem("donationCart", jsonData);
+      toast("Your Donetion is Complete. Thank you!");
+    }
+  }
+
+  setLsData(clickedId);
+}
 
 const SingelPage = () => {
+  // ;
+
   const [donationData, getDonationData] = useState([]);
   useEffect(() => {
     async function getData() {
@@ -45,6 +72,9 @@ const SingelPage = () => {
         />
         <div className="absolute bottom-0 left-0 bg-singlePageBgClr w-full">
           <button
+            onClick={() => {
+              hendalarDontionClickFor(id);
+            }}
             className="m-9 text-xl text-white font-semibold px-6 py-4 rounded-md"
             style={priceBtnStyle}
           >
@@ -56,6 +86,7 @@ const SingelPage = () => {
         <h2 className="text-singlePgTitl font-bold">{title}</h2>
         <p className="text-lg font-normal mt-6">{description}</p>
       </div>
+      <ToastContainer />
     </section>
   );
 };
