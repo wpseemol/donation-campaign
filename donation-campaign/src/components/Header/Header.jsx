@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import { useLocation } from "react-router-dom";
 import Nav from "../Nav/Nav";
+import { CrtContext } from "../../Layout/Layout";
 
 const Header = () => {
+  const searchBtnClick = useContext(CrtContext);
   const { pathname } = useLocation();
 
   return (
@@ -24,13 +27,16 @@ const Header = () => {
 
             <div className="bg-white sm:mx-auto mx-2 sm:w-customInput max-w-72 flex items-center border rounded-lg">
               <input
-                className="text-sm p-4  w-3/4 outline-none rounded-l-lg"
+                className="text-sm p-3  w-3/4 outline-none rounded-l-lg"
                 type="text"
                 name="text"
                 placeholder="Search here...."
               />
               <input
-                className="bg-primaryColr w-1/4 py-4  text-white font-semibold rounded-r-lg"
+                onClick={() => {
+                  searchBtnClick("Hello Seemol");
+                }}
+                className="btn bg-primaryColr w-1/4 border-2 border-primaryColr text-white font-semibold rounded-r-lg"
                 type="button"
                 value="Search"
               />

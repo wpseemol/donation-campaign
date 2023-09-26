@@ -8,7 +8,6 @@ const Main = () => {
   const { pathname } = useLocation();
 
   const alldata = useMySiteDataFatch();
-  console.log(alldata);
 
   return (
     <main className="container 2xl:container xl:container lg:container md:container sm:container  mx-auto">

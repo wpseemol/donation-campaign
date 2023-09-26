@@ -1,8 +1,7 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import useMySiteDataFatch from "../../myHooks/MySiteDataFatch/MySiteDataFatch";
 
 function hendalarDontionClickFor(clickedId) {
   function getLsData() {
@@ -30,20 +29,7 @@ function hendalarDontionClickFor(clickedId) {
 }
 
 const SingelPage = () => {
-  // ;
-
-  const [donationData, getDonationData] = useState([]);
-  useEffect(() => {
-    async function getData() {
-      try {
-        const response = await axios.get("./dontion-campaign.json");
-        getDonationData(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    }
-    getData();
-  }, []);
+  const donationData = useMySiteDataFatch();
 
   const params = useParams();
 
