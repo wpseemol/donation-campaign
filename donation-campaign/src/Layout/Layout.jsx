@@ -4,17 +4,27 @@ import Header from "../components/Header/Header";
 import Main from "../components/Main/Main";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import useMySiteDataFatch from "../myHooks/MySiteDataFatch/MySiteDataFatch";
 
 export const CrtContext = createContext(null);
 
 const Layout = () => {
-  const [srcText, setSrcText] = useState("");
+  const allData = useMySiteDataFatch() || [];
+  const [sarchDatas, setSarchDatas] = useState([]);
+  const [isSearData, setIsSarData] = useState(false);
+  const [searchrText, setSearchrText] = useState("");
 
   function handalSearchBtnClick(e) {
     //srchDataPass("click search btn" + e);
 
     if (e) {
-      setSrcText(e.toLowerCase());
+      const searchData = allData.filter(
+        (data) => data.category.toLowerCase() === e.toLowerCase()
+      );
+      const sarcheDatas = searchData || [];
+      setSarchDatas(sarcheDatas);
+      setIsSarData(true);
+      setSearchrText(e);
     } else {
       toast("Your input fill is nothing");
     }
@@ -24,12 +34,20 @@ const Layout = () => {
     <>
       <CrtContext.Provider value={handalSearchBtnClick}>
         <Header></Header>
-        <Main passData={srcText}></Main>
+        <Main
+          passData={!isSearData ? allData : sarchDatas}
+          sarceText={searchrText}
+        ></Main>
         <ToastContainer />
         <Footer></Footer>
       </CrtContext.Provider>
     </>
   );
 };
+
+// const SearchComponet = (srceText) => {
+
+//   return searchData;
+// };
 
 export default Layout;

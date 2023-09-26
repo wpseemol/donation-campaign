@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Nav from "../Nav/Nav";
 import { CrtContext } from "../../Layout/Layout";
@@ -39,9 +39,7 @@ const Header = () => {
                 placeholder="Search here...."
               />
               <input
-                onClick={() => {
-                  searchBtnClick(searchText);
-                }}
+                onClick={() => searchBtnClick(searchText)}
                 className="btn bg-primaryColr w-1/4 border-2 border-primaryColr text-white font-semibold rounded-r-lg"
                 type="button"
                 value="Search"
