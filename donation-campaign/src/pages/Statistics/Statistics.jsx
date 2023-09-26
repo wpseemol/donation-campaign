@@ -13,7 +13,7 @@ const Statistics = () => {
   return (
     <div className="flex justify-center items-center">
       <PieChart width={730} height={250}>
-        <Pie data={data} cx="50%" cy="50%" outerRadius={80} label>
+        <Pie data={data} cx="50%" cy="50%" outerRadius={100} label>
           {data.map((entry, index) => (
             <Cell key={`cell-${index}`} />
           ))}

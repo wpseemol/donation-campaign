@@ -40,7 +40,7 @@ const Donation = () => {
       </div>
       <div
         className={
-          dataLlengtth === dntItems.length
+          dntItems.length < 4 || dataLlengtth === dntItems.length
             ? "hidden"
             : "flex justify-center items-center my-14"
         }

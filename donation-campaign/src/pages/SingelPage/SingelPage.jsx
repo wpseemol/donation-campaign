@@ -21,6 +21,8 @@ function hendalarDontionClickFor(clickedId) {
       const jsonData = JSON.stringify(storGetData);
       localStorage.setItem("donationCart", jsonData);
       toast("Your Donetion is Complete. Thank you!");
+    } else {
+      toast("Already donated!");
     }
   }
 
@@ -47,14 +49,8 @@ const SingelPage = () => {
 
   const id = params?.item.split("-")[1];
   const clickedData = donationData.find((element) => element.id === id);
-  const {
-    category,
-    title,
-    image_url,
-    description,
-    text_color,
-    price,
-  } = clickedData || {};
+  const { category, title, image_url, description, text_color, price } =
+    clickedData || {};
 
   const priceBtnStyle = {
     backgroundColor: text_color,
