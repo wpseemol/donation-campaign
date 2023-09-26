@@ -1,25 +1,14 @@
-import { useEffect, useState } from "react";
 import { Outlet, useLocation, useNavigation } from "react-router-dom";
-import axios from "axios";
 import MainDisplayCard from "../MainDisplayCard/MainDisplayCard";
+import useMySiteDataFatch from "../../myHooks/MySiteDataFatch/MySiteDataFatch";
 
 const Main = () => {
   const nevection = useNavigation();
   const isLoadingProducts = nevection.state === "loading";
   const { pathname } = useLocation();
 
-  const [donationData, getDonationData] = useState([]);
-  useEffect(() => {
-    async function getData() {
-      try {
-        const response = await axios.get("./dontion-campaign.json");
-        getDonationData(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    }
-    getData();
-  }, []);
+  const alldata = useMySiteDataFatch();
+  console.log(alldata);
 
   return (
     <main className="container 2xl:container xl:container lg:container md:container sm:container  mx-auto">
@@ -30,7 +19,7 @@ const Main = () => {
       )}
       {pathname === "/" ? (
         <section className="grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-6 mt-20 mx-2">
-          {donationData.map((data) => (
+          {alldata.map((data) => (
             <MainDisplayCard data={data} key={data.id} />
           ))}
         </section>

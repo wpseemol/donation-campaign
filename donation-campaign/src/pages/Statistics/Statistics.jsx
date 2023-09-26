@@ -5,14 +5,15 @@ import { getLsData } from "../../myHooks/LsSetGet";
 
 const Statistics = () => {
   const allDontItems = useLoaderData();
-  // (100 / allDontItems.length);
 
   const [totalDonation, setTotalDonation] = useState(0);
   const yourDonation = 100 - totalDonation;
 
   useEffect(() => {
     const donetedDat = getLsData();
-    setTotalDonation((100 / allDontItems.length) * donetedDat.length);
+    setTotalDonation(
+      Math.round((100 / allDontItems.length) * donetedDat.length)
+    );
   }, []);
 
   const data = [
