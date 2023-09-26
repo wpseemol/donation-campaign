@@ -1,4 +1,3 @@
-
 function getLsData() {
   const lsData = localStorage.getItem("donationCart");
   if (lsData) {
@@ -13,7 +12,7 @@ function setLsData(id) {
   if (!isHasData) {
     storGetData.push(id);
     const jsonData = JSON.stringify(storGetData);
-     localStorage.setItem("donationCart", jsonData);
+    localStorage.setItem("donationCart", jsonData);
   }
 }
 

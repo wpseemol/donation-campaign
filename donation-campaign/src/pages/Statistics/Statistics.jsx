@@ -1,14 +1,29 @@
-import { Cell, Label, Legend, Pie, PieChart, Tooltip } from "recharts";
+import { useEffect, useState } from "react";
+import { useLoaderData } from "react-router-dom";
+import { Cell, Legend, Pie, PieChart, Tooltip } from "recharts";
+import { getLsData } from "../../myHooks/LsSetGet";
 
 const Statistics = () => {
+  const allDontItems = useLoaderData();
+  // (100 / allDontItems.length);
+
+  const [totalDonation, setTotalDonation] = useState(0);
+  const yourDonation = 100 - totalDonation;
+
+  useEffect(() => {
+    const donetedDat = getLsData();
+    setTotalDonation((100 / allDontItems.length) * donetedDat.length);
+  }, []);
+  console.log(totalDonation);
+
   const data = [
     {
       name: "Your Donation",
-      value: 20,
+      value: yourDonation,
     },
     {
       name: "Total Donation",
-      value: 80,
+      value: totalDonation,
     },
   ];
 
