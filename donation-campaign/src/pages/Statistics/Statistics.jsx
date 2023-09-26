@@ -14,7 +14,6 @@ const Statistics = () => {
     const donetedDat = getLsData();
     setTotalDonation((100 / allDontItems.length) * donetedDat.length);
   }, []);
-  console.log(totalDonation);
 
   const data = [
     {

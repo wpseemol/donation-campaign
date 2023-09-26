@@ -1,14 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import CardComponent from "../../components/CardComponent/CardComponent";
-
-function getLsData() {
-  const lsData = localStorage.getItem("donationCart");
-  if (lsData) {
-    return JSON.parse(lsData);
-  }
-  return [];
-}
+import { getLsData } from "../../myHooks/LsSetGet";
 
 const Donation = () => {
   const allDonatItem = useLoaderData();
