@@ -6,5 +6,7 @@
   .active {
     @apply text-primaryColr underline font-bold duration-200;
   }
+  .myContainer {
+    @apply container 2xl:container xl:container lg:container md:container sm:container  mx-auto;
+  }
 }
-

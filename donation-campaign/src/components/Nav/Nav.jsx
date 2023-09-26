@@ -2,11 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 
 const Nav = () => {
   return (
-    <nav
-      className="container 2xl:container xl:container lg:container md:container sm:container  mx-auto
-    sm:flex justify-between items-center text-textColor
-    "
-    >
+    <nav className="myContainer sm:flex justify-between items-center text-textColor">
       <section className="my-14 flex justify-center sm:inline">
         <Link to={"/"}>
           <img src="./Images/Logo.png" alt="" />
