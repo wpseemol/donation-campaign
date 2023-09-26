@@ -38,7 +38,13 @@ const Main = ({ passData, sarceText }) => {
           </div>
         )}
         {pathname === "/" ? (
-          <section className="grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-6 mt-20 mx-2">
+          <section
+            className={
+              !sarceText
+                ? "grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 mt-20 mx-2"
+                : "grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-6 mt-20 mx-2"
+            }
+          >
             {passData.map((data) => (
               <MainDisplayCard data={data} key={data.id} />
             ))}
