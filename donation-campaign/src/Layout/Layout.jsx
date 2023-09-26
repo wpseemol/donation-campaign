@@ -45,9 +45,4 @@ const Layout = () => {
   );
 };
 
-// const SearchComponet = (srceText) => {
-
-//   return searchData;
-// };
-
 export default Layout;

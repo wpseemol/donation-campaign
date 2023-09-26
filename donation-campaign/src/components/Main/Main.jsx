@@ -15,7 +15,17 @@ const Main = ({ passData, sarceText }) => {
             <span className="loading loading-bars loading-lg"></span>
           </div>
         )}
-        {pathname === "/" ? <NotFoundComp sarceText={sarceText} /> : <Outlet />}
+        {pathname === "/" ? (
+          !sarceText ? (
+            <div className="text-center mt-60">
+              <span className="loading loading-bars loading-lg"></span>
+            </div>
+          ) : (
+            <NotFoundComp sarceText={sarceText} />
+          )
+        ) : (
+          <Outlet />
+        )}
       </main>
     );
   } else {
