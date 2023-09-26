@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Nav from "../Nav/Nav";
 import { CrtContext } from "../../Layout/Layout";
@@ -7,8 +7,9 @@ const Header = () => {
   const searchBtnClick = useContext(CrtContext);
   const { pathname } = useLocation();
 
+  const [searchText, setSearchText] = useState("");
   function handelSearchData(e) {
-    console.log(e.text);
+    setSearchText(e.target.value);
   }
 
   return (
@@ -39,7 +40,7 @@ const Header = () => {
               />
               <input
                 onClick={() => {
-                  searchBtnClick("Hello Seemol");
+                  searchBtnClick(searchText);
                 }}
                 className="btn bg-primaryColr w-1/4 border-2 border-primaryColr text-white font-semibold rounded-r-lg"
                 type="button"

@@ -1,16 +1,19 @@
 import { Outlet, useLocation, useNavigation } from "react-router-dom";
 import MainDisplayCard from "../MainDisplayCard/MainDisplayCard";
 import useMySiteDataFatch from "../../myHooks/MySiteDataFatch/MySiteDataFatch";
-import { useEffect, useState } from "react";
+import SearchComponet from "../SearchComponet/SearchComponet";
 
-const Main = (props) => {
+const Main = ({ passData }) => {
   const nevection = useNavigation();
   const isLoadingProducts = nevection.state === "loading";
   const { pathname } = useLocation();
 
-  // console.log(props);
+  // console.log(passData);
+  // const searchData = SearchComponet(passData);
 
   const alldata = useMySiteDataFatch();
+
+  const test = SearchComponet(passData);
 
   return (
     <main className="container 2xl:container xl:container lg:container md:container sm:container  mx-auto">
@@ -31,10 +34,5 @@ const Main = (props) => {
     </main>
   );
 };
-
-export function srchDataPass(srcData) {
-  <Main data={srcData}></Main>;
-  console.log(srcData);
-}
 
 export default Main;
