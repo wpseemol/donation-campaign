@@ -7,6 +7,10 @@ const Header = () => {
   const searchBtnClick = useContext(CrtContext);
   const { pathname } = useLocation();
 
+  function handelSearchData(e) {
+    console.log(e.text);
+  }
+
   return (
     <header>
       {pathname === "/" ? (
@@ -27,6 +31,7 @@ const Header = () => {
 
             <div className="bg-white sm:mx-auto mx-2 sm:w-customInput max-w-72 flex items-center border rounded-lg">
               <input
+                onChange={handelSearchData}
                 className="text-sm p-3  w-3/4 outline-none rounded-l-lg"
                 type="text"
                 name="text"

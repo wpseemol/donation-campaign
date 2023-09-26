@@ -1,11 +1,14 @@
 import { Outlet, useLocation, useNavigation } from "react-router-dom";
 import MainDisplayCard from "../MainDisplayCard/MainDisplayCard";
 import useMySiteDataFatch from "../../myHooks/MySiteDataFatch/MySiteDataFatch";
+import { useEffect, useState } from "react";
 
-const Main = () => {
+const Main = (props) => {
   const nevection = useNavigation();
   const isLoadingProducts = nevection.state === "loading";
   const { pathname } = useLocation();
+
+  // console.log(props);
 
   const alldata = useMySiteDataFatch();
 
@@ -28,5 +31,10 @@ const Main = () => {
     </main>
   );
 };
+
+export function srchDataPass(srcData) {
+  <Main data={srcData}></Main>;
+  console.log(srcData);
+}
 
 export default Main;
