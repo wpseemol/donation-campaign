@@ -1,6 +1,7 @@
 import { Outlet, useLocation, useNavigation } from "react-router-dom";
 import MainDisplayCard from "../MainDisplayCard/MainDisplayCard";
 import NotFoundComp from "../NotFoundComp/NotFoundComp";
+import PropTypes from "prop-types";
 
 const Main = ({ passData, sarceText }) => {
   const nevection = useNavigation();
@@ -48,6 +49,11 @@ const Main = ({ passData, sarceText }) => {
       </main>
     );
   }
+};
+
+Main.propTypes = {
+  passData: PropTypes.array.isRequired,
+  sarceText: PropTypes.string.isRequired,
 };
 
 export default Main;
