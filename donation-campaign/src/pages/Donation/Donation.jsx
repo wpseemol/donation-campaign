@@ -21,10 +21,12 @@ const Donation = () => {
     }
   }, []);
 
-  if (dntItems.length <= 0) {
+
+
+  if (!dntItems.length <= 0) {
     return (
-      <main className="myContainer">
-        <div className="grid sm:grid-cols-2 grid-cols-1 gap-6 mx-3 mt-48 sm:mt-0">
+      <main className="myContainer mt-80 sm:mt-0">
+        <div className="grid sm:grid-cols-2 grid-cols-1 gap-6 mx-3 ">
           {dntItems &&
             dntItems
               .slice(0, dataLlengtth)

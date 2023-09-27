@@ -57,7 +57,8 @@ const Statistics = () => {
   };
 
   return (
-    <div className="sm:flex justify-center items-center mt-48 sm:mt-0">
+    <div className="sm:flex justify-center items-center mt-80 sm:mt-0">
+     
       <PieChart width={650} height={650}>
         <Pie
           data={data}
