@@ -41,7 +41,7 @@ const Header = () => {
               />
               <input
                 onClick={() => searchBtnClick(searchText)}
-                className="btn bg-primaryColr w-1/4 border-2 border-primaryColr text-white font-semibold rounded-r-lg"
+                className="btn bg-primaryColr w-1/4 border-2 border-primaryColr capitalize text-white font-semibold rounded-r-lg"
                 type="button"
                 value="Search"
               />

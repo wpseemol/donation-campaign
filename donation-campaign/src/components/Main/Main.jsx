@@ -2,6 +2,7 @@ import { Outlet, useLocation, useNavigation } from "react-router-dom";
 import MainDisplayCard from "../MainDisplayCard/MainDisplayCard";
 import NotFoundComp from "../NotFoundComp/NotFoundComp";
 import PropTypes from "prop-types";
+import SucssSearText from "../SucssSearText/SucssSearText";
 
 const Main = ({ passData, sarceText }) => {
   const nevection = useNavigation();
@@ -32,6 +33,11 @@ const Main = ({ passData, sarceText }) => {
   } else {
     return (
       <main className="myContainer">
+        {pathname === "/" && sarceText ? (
+          <SucssSearText scussText={sarceText} />
+        ) : (
+          ""
+        )}
         {isLoadingProducts && (
           <div className="text-center mt-60">
             <span className="loading loading-bars loading-lg"></span>
