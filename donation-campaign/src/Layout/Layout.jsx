@@ -4,12 +4,13 @@ import Header from "../components/Header/Header";
 import Main from "../components/Main/Main";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import useMySiteDataFatch from "../myHooks/MySiteDataFatch/MySiteDataFatch";
+import { useLoaderData } from "react-router-dom";
 
 export const CrtContext = createContext(null);
 
 const Layout = () => {
-  const allData = useMySiteDataFatch() || [];
+  const allData = useLoaderData().data || [];
+  
   const [sarchDatas, setSarchDatas] = useState([]);
   const [isSearData, setIsSarData] = useState(false);
   const [searchrText, setSearchrText] = useState("");

@@ -1,7 +1,6 @@
-import { useParams } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import { useLoaderData, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import useMySiteDataFatch from "../../myHooks/MySiteDataFatch/MySiteDataFatch";
 
 function hendalarDontionClickFor(clickedId) {
   function getLsData() {
@@ -22,6 +21,7 @@ function hendalarDontionClickFor(clickedId) {
       toast("Your Donetion is Complete. Thank you!");
     } else {
       toast("Already donated!");
+      console.log("chake");
     }
   }
 
@@ -29,11 +29,11 @@ function hendalarDontionClickFor(clickedId) {
 }
 
 const SingelPage = () => {
-  const donationData = useMySiteDataFatch();
+  const donationData = useLoaderData().data || [];
 
-  const params = useParams();
+  const paramsData = useParams();
 
-  const id = params?.item.split("-")[1];
+  const id = paramsData?.item?.split("-")[1];
   const clickedData = donationData.find((element) => element.id === id);
   const { category, title, image_url, description, text_color, price } =
     clickedData || {};
@@ -66,7 +66,6 @@ const SingelPage = () => {
         <h2 className="text-singlePgTitl font-bold">{title}</h2>
         <p className="text-lg font-normal mt-6">{description}</p>
       </div>
-      <ToastContainer />
     </section>
   );
 };

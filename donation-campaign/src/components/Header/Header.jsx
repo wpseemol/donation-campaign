@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Nav from "../Nav/Nav";
 import { CrtContext } from "../../Layout/Layout";
+import banarPaiture from "../../assets/Images/banarPaiture.jpg";
 
 const Header = () => {
   const searchBtnClick = useContext(CrtContext);
@@ -18,7 +19,7 @@ const Header = () => {
         <figure className="relative h-banarHeight w-full">
           <img
             className="h-full w-full object-cover object-top"
-            src="./Images/banar-paiture.jpg"
+            src={banarPaiture}
             alt="nature image"
           />
           <figcaption

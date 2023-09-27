@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
+
+import PropTypes from "prop-types";
 
 const CardComponent = ({ content }) => {
   const {
-    id,
+    // id,
     title,
     image_url,
     category_background_color,
@@ -11,6 +12,10 @@ const CardComponent = ({ content }) => {
     background_color,
     price,
   } = content || {};
+
+  const handalGoItemPage = () => {
+    console.log("Navigate(`item/itme-id`);");
+  };
 
   const DonCrtBgColor = {
     backgroundColor: background_color,
@@ -48,17 +53,21 @@ const CardComponent = ({ content }) => {
         </h3>
         <h2 className="mt-1 text-2xl text-textColor font-semibold">{title}</h2>
         <p className="mb-2 font-semibold">${price}</p>
-        <Link to={`/item-${id}`}>
-          <button
-            style={btnBgColor}
-            className="btn text-white text-xl font-semibold capitalize"
-          >
-            View Details
-          </button>
-        </Link>
+
+        <button
+          onClick={handalGoItemPage}
+          style={btnBgColor}
+          className="btn text-white text-xl font-semibold capitalize"
+        >
+          View Details
+        </button>
       </div>
     </div>
   );
+};
+
+CardComponent.propTypes = {
+  content: PropTypes.object.isRequired,
 };
 
 export default CardComponent;

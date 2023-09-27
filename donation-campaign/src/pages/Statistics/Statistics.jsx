@@ -4,7 +4,7 @@ import { Cell, Legend, Pie, PieChart, Tooltip } from "recharts";
 import { getLsData } from "../../myHooks/LsSetGet";
 
 const Statistics = () => {
-  const allDontItems = useLoaderData();
+  const allDontItems = useLoaderData().data || [];
 
   const [totalDonation, setTotalDonation] = useState(0);
   const yourDonation = 100 - totalDonation;

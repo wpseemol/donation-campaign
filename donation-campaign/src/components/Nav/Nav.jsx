@@ -1,11 +1,12 @@
 import { Link, NavLink } from "react-router-dom";
+import Logo from "../../assets/Images/Logo.png";
 
 const Nav = () => {
   return (
     <nav className="myContainer sm:flex justify-between items-center text-textColor">
       <section className="my-14 flex justify-center sm:inline">
         <Link to={"/"}>
-          <img src="./Images/Logo.png" alt="" />
+          <img src={Logo} alt="" />
         </Link>
       </section>
 

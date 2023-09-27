@@ -4,7 +4,7 @@ import CardComponent from "../../components/CardComponent/CardComponent";
 import { getLsData } from "../../myHooks/LsSetGet";
 
 const Donation = () => {
-  const allDonatItem = useLoaderData();
+  const allDonatItem = useLoaderData().data || [];
   const [dntItems, setDntItems] = useState([]);
 
   const [dataLlengtth, setDatalenth] = useState(4);
@@ -23,7 +23,7 @@ const Donation = () => {
 
   return (
     <>
-      <div className="grid sm:grid-cols-2 grid-cols-1 gap-6">
+      <div className="grid sm:grid-cols-2 grid-cols-1 gap-6 mx-3">
         {dntItems &&
           dntItems
             .slice(0, dataLlengtth)
