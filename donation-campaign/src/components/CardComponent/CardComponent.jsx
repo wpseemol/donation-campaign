@@ -1,9 +1,10 @@
-
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+
 
 const CardComponent = ({ content }) => {
   const {
-    // id,
+    id,
     title,
     image_url,
     category_background_color,
@@ -13,9 +14,6 @@ const CardComponent = ({ content }) => {
     price,
   } = content || {};
 
-  const handalGoItemPage = () => {
-    console.log("Navigate(`item/itme-id`);");
-  };
 
   const DonCrtBgColor = {
     backgroundColor: background_color,
@@ -54,13 +52,14 @@ const CardComponent = ({ content }) => {
         <h2 className="mt-1 text-2xl text-textColor font-semibold">{title}</h2>
         <p className="mb-2 font-semibold">${price}</p>
 
-        <button
-          onClick={handalGoItemPage}
-          style={btnBgColor}
-          className="btn text-white text-xl font-semibold capitalize"
-        >
-          View Details
-        </button>
+        <Link to={`/item-${id}`}>
+          <button
+            style={btnBgColor}
+            className="btn text-white text-xl font-semibold capitalize"
+          >
+            View Details
+          </button>
+        </Link>
       </div>
     </div>
   );

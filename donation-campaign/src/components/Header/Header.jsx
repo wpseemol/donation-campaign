@@ -1,17 +1,15 @@
-import { useContext, useState } from "react";
+
 import { useLocation } from "react-router-dom";
 import Nav from "../Nav/Nav";
-import { CrtContext } from "../../Layout/Layout";
+
 import banarPaiture from "../../assets/Images/banarPaiture.jpg";
 
+
 const Header = () => {
-  const searchBtnClick = useContext(CrtContext);
+  
   const { pathname } = useLocation();
 
-  const [searchText, setSearchText] = useState("");
-  function handelSearchData(e) {
-    setSearchText(e.target.value);
-  }
+  
 
   return (
     <header>
@@ -27,25 +25,11 @@ const Header = () => {
           "
           >
             <Nav />
-            <h2 className="text-center sm:text-5xl text-2xl font-bold sm:mt-28 mt-10 mx-3 mb-4 sm:mb-10">
+            <h2 className="text-center sm:text-2xl md:text-5xl text-xl font-bold sm:mt-28  mx-3 mb-4 sm:mb-10 mt-60">
               I Grow By Helping People In Need
             </h2>
 
-            <div className="bg-white sm:mx-auto mx-2 sm:w-customInput max-w-72 flex items-center border rounded-lg">
-              <input
-                onChange={handelSearchData}
-                className="text-sm p-3  w-3/4 outline-none rounded-l-lg"
-                type="text"
-                name="text"
-                placeholder="Search here...."
-              />
-              <input
-                onClick={() => searchBtnClick(searchText)}
-                className="btn bg-primaryColr w-1/4 border-2 border-primaryColr capitalize text-white font-semibold rounded-r-lg"
-                type="button"
-                value="Search"
-              />
-            </div>
+            
           </figcaption>
         </figure>
       ) : (

@@ -5,14 +5,19 @@ import Statistics from "../pages/Statistics/Statistics";
 import SingelPage from "../pages/SingelPage/SingelPage";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import axios from "axios";
+import Home from "../pages/Home/Home";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />,
+    element: <Home />,
     errorElement: <ErrorPage />,
-    loader: () => axios.get("/dontion-campaign.json"),
     children: [
+      {
+        path: "/",
+        element: <Layout />,
+        loader: () => axios.get("/dontion-campaign.json"),
+      },
       {
         path: "/donation",
         element: <Donation />,
@@ -24,7 +29,7 @@ const router = createBrowserRouter([
         loader: () => axios.get("/dontion-campaign.json"),
       },
       {
-        path: "/items/:item",
+        path: "/:item",
         element: <SingelPage />,
         loader: () => axios.get("/dontion-campaign.json"),
       },

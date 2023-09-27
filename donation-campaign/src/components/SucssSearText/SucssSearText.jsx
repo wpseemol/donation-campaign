@@ -1,4 +1,4 @@
-
+import PropTypes from "prop-types";
 
 const SucssSearText = ({ scussText }) => {
   return (
@@ -11,6 +11,10 @@ const SucssSearText = ({ scussText }) => {
       </h2>
     </div>
   );
+};
+
+SucssSearText.propTypes = {
+  scussText: PropTypes.string.isRequired,
 };
 
 export default SucssSearText;

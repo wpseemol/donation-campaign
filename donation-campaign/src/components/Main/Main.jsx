@@ -17,47 +17,36 @@ const Main = ({ passData, sarceText }) => {
             <span className="loading loading-bars loading-lg"></span>
           </div>
         )}
-        {pathname === "/" ? (
-          !sarceText ? (
-            <div className="text-center mt-60">
-              <span className="loading loading-bars loading-lg"></span>
-            </div>
-          ) : (
-            <NotFoundComp sarceText={sarceText} />
-          )
+        {!sarceText ? (
+          <div className="text-center mt-60">
+            <span className="loading loading-bars loading-lg"></span>
+          </div>
         ) : (
-          <Outlet />
+          <NotFoundComp sarceText={sarceText} />
         )}
       </main>
     );
   } else {
     return (
       <main className="myContainer">
-        {pathname === "/" && sarceText ? (
-          <SucssSearText scussText={sarceText} />
-        ) : (
-          ""
-        )}
+        {sarceText ? <SucssSearText scussText={sarceText} /> : <></>}
         {isLoadingProducts && (
           <div className="text-center mt-60">
             <span className="loading loading-bars loading-lg"></span>
           </div>
         )}
-        {pathname === "/" ? (
-          <section
-            className={
-              !sarceText
-                ? "grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-6 mt-20 mx-2"
-                : "grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 mt-20 mx-2"
-            }
-          >
-            {passData.map((data) => (
-              <MainDisplayCard data={data} key={data.id} />
-            ))}
-          </section>
-        ) : (
-          <Outlet />
-        )}
+
+        <section
+          className={
+            !sarceText
+              ? "grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-6 mt-20 mx-2"
+              : "grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 mt-20 mx-2"
+          }
+        >
+          {passData.map((data) => (
+            <MainDisplayCard data={data} key={data.id} />
+          ))}
+        </section>
       </main>
     );
   }

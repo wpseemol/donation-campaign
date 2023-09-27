@@ -24,6 +24,10 @@ export default {
       fontSize: {
         singlePgTitl: "2.5rem",
       },
+      spacing: {
+        myTop: "11.5625rem",
+        myTopsm: "8.5625rem",
+      },
     },
   },
   plugins: [require("daisyui")],

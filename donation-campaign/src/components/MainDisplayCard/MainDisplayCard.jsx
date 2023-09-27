@@ -15,7 +15,7 @@ const MainDisplayCard = ({ data }) => {
   const navigate = useNavigate();
 
   function handelClick() {
-    navigate(`/items/item-${id}`);
+    navigate(`/item-${id}`);
   }
 
   const crtBgColor = {

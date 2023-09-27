@@ -23,7 +23,7 @@ const Donation = () => {
 
   return (
     <>
-      <div className="grid sm:grid-cols-2 grid-cols-1 gap-6 mx-3">
+      <div className="grid sm:grid-cols-2 grid-cols-1 gap-6 mx-3 mt-48 sm:mt-0">
         {dntItems &&
           dntItems
             .slice(0, dataLlengtth)
