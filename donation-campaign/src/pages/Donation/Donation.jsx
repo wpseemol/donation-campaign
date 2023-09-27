@@ -52,7 +52,7 @@ const Donation = () => {
     return (
       <main className="myContainer mt-96 sm:mt-80 ">
         <div className="flex justify-center ">
-          <h2 className="text-4xl font-bold"> Data Not Found </h2>
+          <h2 className="text-4xl font-bold"> Data No Found </h2>
         </div>
       </main>
     );
