@@ -49,7 +49,7 @@ const SingelPage = () => {
   if (!(haveData.length <= 0)) {
     return (
       <>
-        <main className="myContainer mt-48 sm:mt-0">
+        <main className="myContainer mt-80 sm:mt-5">
           <section className="m-4 md:m-0">
             <div className="sm:relative rounded-lg">
               <img
@@ -80,7 +80,7 @@ const SingelPage = () => {
       </>
     );
   } else {
-    return <ErrorPageCompnt/>
+    return <ErrorPageCompnt />;
   }
 };
 

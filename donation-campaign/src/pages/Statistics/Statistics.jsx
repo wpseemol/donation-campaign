@@ -2,12 +2,15 @@ import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { Cell, Legend, Pie, PieChart, Tooltip } from "recharts";
 import { getLsData } from "../../myHooks/LsSetGet";
+import { useWindowSize } from "@uidotdev/usehooks";
 
 const Statistics = () => {
   const allDontItems = useLoaderData().data || [];
 
   const [totalDonation, setTotalDonation] = useState(0);
   const yourDonation = 100 - totalDonation;
+
+  const size = useWindowSize();
 
   useEffect(() => {
     const donetedDat = getLsData();
@@ -44,7 +47,7 @@ const Statistics = () => {
 
     return (
       <text
-        className="text-4xl font-bold"
+        className={size.width > 720 ? "text-2xl font-bold" : "font-medium"}
         x={x}
         y={y}
         fill="white"
@@ -57,16 +60,18 @@ const Statistics = () => {
   };
 
   return (
-    <div className="sm:flex justify-center items-center mt-80 sm:mt-0">
-     
-      <PieChart width={650} height={650}>
+    <div className="myContainer flex justify-center items-center mt-80 sm:mt-0">
+      <PieChart
+        width={size.width > 720 ? 720 : 320}
+        height={size.width > 720 ? 620 : 520}
+      >
         <Pie
           data={data}
           dataKey="value"
           nameKey="name"
           cx="50%"
           cy="50%"
-          outerRadius={250}
+          outerRadius={size.width > 720 ? 250 : 150}
           fill="#8884d8"
           labelLine={false}
           label={renderCustomizedLabel}
@@ -76,7 +81,11 @@ const Statistics = () => {
           ))}
         </Pie>
         <Tooltip payload={[{ unit: "%" }]} />
-        <Legend iconType="plainline" iconSize={80} formatter={textStyleSet} />
+        <Legend
+          iconType="plainline"
+          iconSize={size.width > 720 ? 70 : 40}
+          formatter={textStyleSet}
+        />
       </PieChart>
     </div>
   );
